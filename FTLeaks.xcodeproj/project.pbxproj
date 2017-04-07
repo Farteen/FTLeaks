@@ -1,0 +1,766 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6503DDFF1456534553B547C7 /* libPods-FTLeaksTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37126BDB7F5A65EB0FC9D330 /* libPods-FTLeaksTests.a */; };
+		8B8EC6907B08237E9F51281B /* libPods-FTLeaks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE893579FCCB7C6FE63F7F1 /* libPods-FTLeaks.a */; };
+		C32C50E71E978C88004949FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C50E61E978C88004949FC /* main.m */; };
+		C32C50EA1E978C88004949FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C50E91E978C88004949FC /* AppDelegate.m */; };
+		C32C50ED1E978C88004949FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C50EC1E978C88004949FC /* ViewController.m */; };
+		C32C50F01E978C88004949FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32C50EE1E978C88004949FC /* Main.storyboard */; };
+		C32C50F21E978C88004949FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C32C50F11E978C88004949FC /* Assets.xcassets */; };
+		C32C50F51E978C88004949FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32C50F31E978C88004949FC /* LaunchScreen.storyboard */; };
+		C32C51001E978C88004949FC /* FTLeaksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C50FF1E978C88004949FC /* FTLeaksTests.m */; };
+		C32C510B1E978C88004949FC /* FTLeaksUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C510A1E978C88004949FC /* FTLeaksUITests.m */; };
+		C32C511A1E978CA3004949FC /* FTLeaksCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C51191E978CA3004949FC /* FTLeaksCenter.m */; };
+		C32C511E1E9793EC004949FC /* NSObject+FTLeaks.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C511D1E9793EC004949FC /* NSObject+FTLeaks.m */; };
+		C32C51211E979504004949FC /* NSObject+FTLeaksInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C51201E979504004949FC /* NSObject+FTLeaksInfo.m */; };
+		C32C51241E979860004949FC /* UIViewController+FTLeaksQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C51231E979860004949FC /* UIViewController+FTLeaksQuery.m */; };
+		C32C51271E9799AA004949FC /* UINavigationController+FTLeaksQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C51261E9799AA004949FC /* UINavigationController+FTLeaksQuery.m */; };
+		C32C512A1E9799B7004949FC /* UIView+FTLeaksQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C51291E9799B7004949FC /* UIView+FTLeaksQuery.m */; };
+		ED1AF0EE4EB8537B764DA320 /* libPods-FTLeaksUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB13F62EFAB1598487422660 /* libPods-FTLeaksUITests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C32C50FC1E978C88004949FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C32C50DA1E978C88004949FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C32C50E11E978C88004949FC;
+			remoteInfo = FTLeaks;
+		};
+		C32C51071E978C88004949FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C32C50DA1E978C88004949FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C32C50E11E978C88004949FC;
+			remoteInfo = FTLeaks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		26CDE86055EBA530EE6C0509 /* Pods-FTLeaksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTLeaksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTLeaksTests/Pods-FTLeaksTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3444C8BC62D198A62EF86ECD /* Pods-FTLeaksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTLeaksTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTLeaksTests/Pods-FTLeaksTests.release.xcconfig"; sourceTree = "<group>"; };
+		37126BDB7F5A65EB0FC9D330 /* libPods-FTLeaksTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FTLeaksTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E880FC4D4E143BA7408CBD3 /* Pods-FTLeaksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTLeaksUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTLeaksUITests/Pods-FTLeaksUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8EC885AD96D724F60A40285D /* Pods-FTLeaks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTLeaks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTLeaks/Pods-FTLeaks.debug.xcconfig"; sourceTree = "<group>"; };
+		AB13F62EFAB1598487422660 /* libPods-FTLeaksUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FTLeaksUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADD801740A96B1223443D924 /* Pods-FTLeaksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTLeaksUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTLeaksUITests/Pods-FTLeaksUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B2C2A8C99649B2D89EA72D8B /* Pods-FTLeaks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTLeaks.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTLeaks/Pods-FTLeaks.release.xcconfig"; sourceTree = "<group>"; };
+		C32C50E21E978C88004949FC /* FTLeaks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTLeaks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32C50E61E978C88004949FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C32C50E81E978C88004949FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C32C50E91E978C88004949FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C32C50EB1E978C88004949FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C32C50EC1E978C88004949FC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C32C50EF1E978C88004949FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C32C50F11E978C88004949FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C32C50F41E978C88004949FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C32C50F61E978C88004949FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C32C50FB1E978C88004949FC /* FTLeaksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTLeaksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32C50FF1E978C88004949FC /* FTLeaksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTLeaksTests.m; sourceTree = "<group>"; };
+		C32C51011E978C88004949FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C32C51061E978C88004949FC /* FTLeaksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTLeaksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32C510A1E978C88004949FC /* FTLeaksUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTLeaksUITests.m; sourceTree = "<group>"; };
+		C32C510C1E978C88004949FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C32C51181E978CA3004949FC /* FTLeaksCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLeaksCenter.h; sourceTree = "<group>"; };
+		C32C51191E978CA3004949FC /* FTLeaksCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLeaksCenter.m; sourceTree = "<group>"; };
+		C32C511B1E97922D004949FC /* FTLeaksQueryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLeaksQueryProtocol.h; sourceTree = "<group>"; };
+		C32C511C1E9793EC004949FC /* NSObject+FTLeaks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FTLeaks.h"; sourceTree = "<group>"; };
+		C32C511D1E9793EC004949FC /* NSObject+FTLeaks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FTLeaks.m"; sourceTree = "<group>"; };
+		C32C511F1E979504004949FC /* NSObject+FTLeaksInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FTLeaksInfo.h"; sourceTree = "<group>"; };
+		C32C51201E979504004949FC /* NSObject+FTLeaksInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FTLeaksInfo.m"; sourceTree = "<group>"; };
+		C32C51221E97985F004949FC /* UIViewController+FTLeaksQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FTLeaksQuery.h"; sourceTree = "<group>"; };
+		C32C51231E979860004949FC /* UIViewController+FTLeaksQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FTLeaksQuery.m"; sourceTree = "<group>"; };
+		C32C51251E9799AA004949FC /* UINavigationController+FTLeaksQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FTLeaksQuery.h"; sourceTree = "<group>"; };
+		C32C51261E9799AA004949FC /* UINavigationController+FTLeaksQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FTLeaksQuery.m"; sourceTree = "<group>"; };
+		C32C51281E9799B7004949FC /* UIView+FTLeaksQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FTLeaksQuery.h"; sourceTree = "<group>"; };
+		C32C51291E9799B7004949FC /* UIView+FTLeaksQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FTLeaksQuery.m"; sourceTree = "<group>"; };
+		FFE893579FCCB7C6FE63F7F1 /* libPods-FTLeaks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FTLeaks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C32C50DF1E978C88004949FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B8EC6907B08237E9F51281B /* libPods-FTLeaks.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32C50F81E978C88004949FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6503DDFF1456534553B547C7 /* libPods-FTLeaksTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32C51031E978C88004949FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED1AF0EE4EB8537B764DA320 /* libPods-FTLeaksUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FD8D512CDCFCEB7CCF69079 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFE893579FCCB7C6FE63F7F1 /* libPods-FTLeaks.a */,
+				37126BDB7F5A65EB0FC9D330 /* libPods-FTLeaksTests.a */,
+				AB13F62EFAB1598487422660 /* libPods-FTLeaksUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92E010738E17868011F137A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8EC885AD96D724F60A40285D /* Pods-FTLeaks.debug.xcconfig */,
+				B2C2A8C99649B2D89EA72D8B /* Pods-FTLeaks.release.xcconfig */,
+				26CDE86055EBA530EE6C0509 /* Pods-FTLeaksTests.debug.xcconfig */,
+				3444C8BC62D198A62EF86ECD /* Pods-FTLeaksTests.release.xcconfig */,
+				ADD801740A96B1223443D924 /* Pods-FTLeaksUITests.debug.xcconfig */,
+				5E880FC4D4E143BA7408CBD3 /* Pods-FTLeaksUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C32C50D91E978C88004949FC = {
+			isa = PBXGroup;
+			children = (
+				C32C50E41E978C88004949FC /* FTLeaks */,
+				C32C50FE1E978C88004949FC /* FTLeaksTests */,
+				C32C51091E978C88004949FC /* FTLeaksUITests */,
+				C32C50E31E978C88004949FC /* Products */,
+				92E010738E17868011F137A9 /* Pods */,
+				3FD8D512CDCFCEB7CCF69079 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C32C50E31E978C88004949FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C32C50E21E978C88004949FC /* FTLeaks.app */,
+				C32C50FB1E978C88004949FC /* FTLeaksTests.xctest */,
+				C32C51061E978C88004949FC /* FTLeaksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C32C50E41E978C88004949FC /* FTLeaks */ = {
+			isa = PBXGroup;
+			children = (
+				C32C50E81E978C88004949FC /* AppDelegate.h */,
+				C32C50E91E978C88004949FC /* AppDelegate.m */,
+				C32C50EB1E978C88004949FC /* ViewController.h */,
+				C32C50EC1E978C88004949FC /* ViewController.m */,
+				C32C51181E978CA3004949FC /* FTLeaksCenter.h */,
+				C32C51191E978CA3004949FC /* FTLeaksCenter.m */,
+				C32C511B1E97922D004949FC /* FTLeaksQueryProtocol.h */,
+				C32C511C1E9793EC004949FC /* NSObject+FTLeaks.h */,
+				C32C511D1E9793EC004949FC /* NSObject+FTLeaks.m */,
+				C32C511F1E979504004949FC /* NSObject+FTLeaksInfo.h */,
+				C32C51201E979504004949FC /* NSObject+FTLeaksInfo.m */,
+				C32C51221E97985F004949FC /* UIViewController+FTLeaksQuery.h */,
+				C32C51231E979860004949FC /* UIViewController+FTLeaksQuery.m */,
+				C32C51251E9799AA004949FC /* UINavigationController+FTLeaksQuery.h */,
+				C32C51261E9799AA004949FC /* UINavigationController+FTLeaksQuery.m */,
+				C32C51281E9799B7004949FC /* UIView+FTLeaksQuery.h */,
+				C32C51291E9799B7004949FC /* UIView+FTLeaksQuery.m */,
+				C32C50EE1E978C88004949FC /* Main.storyboard */,
+				C32C50F11E978C88004949FC /* Assets.xcassets */,
+				C32C50F31E978C88004949FC /* LaunchScreen.storyboard */,
+				C32C50F61E978C88004949FC /* Info.plist */,
+				C32C50E51E978C88004949FC /* Supporting Files */,
+			);
+			path = FTLeaks;
+			sourceTree = "<group>";
+		};
+		C32C50E51E978C88004949FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C32C50E61E978C88004949FC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C32C50FE1E978C88004949FC /* FTLeaksTests */ = {
+			isa = PBXGroup;
+			children = (
+				C32C50FF1E978C88004949FC /* FTLeaksTests.m */,
+				C32C51011E978C88004949FC /* Info.plist */,
+			);
+			path = FTLeaksTests;
+			sourceTree = "<group>";
+		};
+		C32C51091E978C88004949FC /* FTLeaksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C32C510A1E978C88004949FC /* FTLeaksUITests.m */,
+				C32C510C1E978C88004949FC /* Info.plist */,
+			);
+			path = FTLeaksUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C32C50E11E978C88004949FC /* FTLeaks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C32C510F1E978C88004949FC /* Build configuration list for PBXNativeTarget "FTLeaks" */;
+			buildPhases = (
+				870C659ECB99302FCCD55F63 /* [CP] Check Pods Manifest.lock */,
+				C32C50DE1E978C88004949FC /* Sources */,
+				C32C50DF1E978C88004949FC /* Frameworks */,
+				C32C50E01E978C88004949FC /* Resources */,
+				ED13FB93B72D07510A5A704D /* [CP] Embed Pods Frameworks */,
+				3D45DB23E7F9C59809F37144 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FTLeaks;
+			productName = FTLeaks;
+			productReference = C32C50E21E978C88004949FC /* FTLeaks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C32C50FA1E978C88004949FC /* FTLeaksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C32C51121E978C88004949FC /* Build configuration list for PBXNativeTarget "FTLeaksTests" */;
+			buildPhases = (
+				3B265710D150E05B05EF164E /* [CP] Check Pods Manifest.lock */,
+				C32C50F71E978C88004949FC /* Sources */,
+				C32C50F81E978C88004949FC /* Frameworks */,
+				C32C50F91E978C88004949FC /* Resources */,
+				90DF7F0097A9CF79A926ED19 /* [CP] Embed Pods Frameworks */,
+				B576B94144A7B04C53577A09 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C32C50FD1E978C88004949FC /* PBXTargetDependency */,
+			);
+			name = FTLeaksTests;
+			productName = FTLeaksTests;
+			productReference = C32C50FB1E978C88004949FC /* FTLeaksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C32C51051E978C88004949FC /* FTLeaksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C32C51151E978C88004949FC /* Build configuration list for PBXNativeTarget "FTLeaksUITests" */;
+			buildPhases = (
+				FA782FBA8B5C0A75B85A9085 /* [CP] Check Pods Manifest.lock */,
+				C32C51021E978C88004949FC /* Sources */,
+				C32C51031E978C88004949FC /* Frameworks */,
+				C32C51041E978C88004949FC /* Resources */,
+				D1705E75E65A8E5220ED54F5 /* [CP] Embed Pods Frameworks */,
+				72F0A378BD7C69CCF32F2485 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C32C51081E978C88004949FC /* PBXTargetDependency */,
+			);
+			name = FTLeaksUITests;
+			productName = FTLeaksUITests;
+			productReference = C32C51061E978C88004949FC /* FTLeaksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C32C50DA1E978C88004949FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = organization;
+				TargetAttributes = {
+					C32C50E11E978C88004949FC = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+					};
+					C32C50FA1E978C88004949FC = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C32C50E11E978C88004949FC;
+					};
+					C32C51051E978C88004949FC = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C32C50E11E978C88004949FC;
+					};
+				};
+			};
+			buildConfigurationList = C32C50DD1E978C88004949FC /* Build configuration list for PBXProject "FTLeaks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C32C50D91E978C88004949FC;
+			productRefGroup = C32C50E31E978C88004949FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C32C50E11E978C88004949FC /* FTLeaks */,
+				C32C50FA1E978C88004949FC /* FTLeaksTests */,
+				C32C51051E978C88004949FC /* FTLeaksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C32C50E01E978C88004949FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C32C50F51E978C88004949FC /* LaunchScreen.storyboard in Resources */,
+				C32C50F21E978C88004949FC /* Assets.xcassets in Resources */,
+				C32C50F01E978C88004949FC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32C50F91E978C88004949FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32C51041E978C88004949FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B265710D150E05B05EF164E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3D45DB23E7F9C59809F37144 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FTLeaks/Pods-FTLeaks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72F0A378BD7C69CCF32F2485 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FTLeaksUITests/Pods-FTLeaksUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		870C659ECB99302FCCD55F63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		90DF7F0097A9CF79A926ED19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FTLeaksTests/Pods-FTLeaksTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B576B94144A7B04C53577A09 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FTLeaksTests/Pods-FTLeaksTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1705E75E65A8E5220ED54F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FTLeaksUITests/Pods-FTLeaksUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED13FB93B72D07510A5A704D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FTLeaks/Pods-FTLeaks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA782FBA8B5C0A75B85A9085 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C32C50DE1E978C88004949FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C32C50ED1E978C88004949FC /* ViewController.m in Sources */,
+				C32C512A1E9799B7004949FC /* UIView+FTLeaksQuery.m in Sources */,
+				C32C50EA1E978C88004949FC /* AppDelegate.m in Sources */,
+				C32C51241E979860004949FC /* UIViewController+FTLeaksQuery.m in Sources */,
+				C32C511A1E978CA3004949FC /* FTLeaksCenter.m in Sources */,
+				C32C50E71E978C88004949FC /* main.m in Sources */,
+				C32C51271E9799AA004949FC /* UINavigationController+FTLeaksQuery.m in Sources */,
+				C32C51211E979504004949FC /* NSObject+FTLeaksInfo.m in Sources */,
+				C32C511E1E9793EC004949FC /* NSObject+FTLeaks.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32C50F71E978C88004949FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C32C51001E978C88004949FC /* FTLeaksTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32C51021E978C88004949FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C32C510B1E978C88004949FC /* FTLeaksUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C32C50FD1E978C88004949FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C32C50E11E978C88004949FC /* FTLeaks */;
+			targetProxy = C32C50FC1E978C88004949FC /* PBXContainerItemProxy */;
+		};
+		C32C51081E978C88004949FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C32C50E11E978C88004949FC /* FTLeaks */;
+			targetProxy = C32C51071E978C88004949FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C32C50EE1E978C88004949FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C32C50EF1E978C88004949FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C32C50F31E978C88004949FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C32C50F41E978C88004949FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C32C510D1E978C88004949FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C32C510E1E978C88004949FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C32C51101E978C88004949FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EC885AD96D724F60A40285D /* Pods-FTLeaks.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FTLeaks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.farteen.audioconsole.FTLeaks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C32C51111E978C88004949FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2C2A8C99649B2D89EA72D8B /* Pods-FTLeaks.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FTLeaks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.farteen.audioconsole.FTLeaks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C32C51131E978C88004949FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26CDE86055EBA530EE6C0509 /* Pods-FTLeaksTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FTLeaksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.farteen.audioconsole.FTLeaksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FTLeaks.app/FTLeaks";
+			};
+			name = Debug;
+		};
+		C32C51141E978C88004949FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3444C8BC62D198A62EF86ECD /* Pods-FTLeaksTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FTLeaksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.farteen.audioconsole.FTLeaksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FTLeaks.app/FTLeaks";
+			};
+			name = Release;
+		};
+		C32C51161E978C88004949FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADD801740A96B1223443D924 /* Pods-FTLeaksUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = FTLeaksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.farteen.audioconsole.FTLeaksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FTLeaks;
+			};
+			name = Debug;
+		};
+		C32C51171E978C88004949FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E880FC4D4E143BA7408CBD3 /* Pods-FTLeaksUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = FTLeaksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.farteen.audioconsole.FTLeaksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FTLeaks;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C32C50DD1E978C88004949FC /* Build configuration list for PBXProject "FTLeaks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C32C510D1E978C88004949FC /* Debug */,
+				C32C510E1E978C88004949FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C32C510F1E978C88004949FC /* Build configuration list for PBXNativeTarget "FTLeaks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C32C51101E978C88004949FC /* Debug */,
+				C32C51111E978C88004949FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C32C51121E978C88004949FC /* Build configuration list for PBXNativeTarget "FTLeaksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C32C51131E978C88004949FC /* Debug */,
+				C32C51141E978C88004949FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C32C51151E978C88004949FC /* Build configuration list for PBXNativeTarget "FTLeaksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C32C51161E978C88004949FC /* Debug */,
+				C32C51171E978C88004949FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C32C50DA1E978C88004949FC /* Project object */;
+}
