@@ -12,9 +12,23 @@
 @implementation UIView (FTLeaksQuery)
 
 + (void)prepareForQuery {
-  [UIView aspect_hookSelector:@selector(didMoveToSuperview) withOptions:AspectPositionAfter usingBlock:^{
-    
+  [UIView aspect_hookSelector:@selector(didMoveToSuperview) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+    NSLog(@"%@",aspectInfo.instance);
+      
   } error:nil];
 }
+
+- (BOOL)isVisible {
+  if (self.window) {
+    return YES;
+  }
+  return NO;
+}
+
+- (BOOL)isInViewStack {
+  
+}
+
+
 
 @end

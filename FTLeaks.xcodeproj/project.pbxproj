@@ -23,6 +23,9 @@
 		C32C51241E979860004949FC /* UIViewController+FTLeaksQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C51231E979860004949FC /* UIViewController+FTLeaksQuery.m */; };
 		C32C51271E9799AA004949FC /* UINavigationController+FTLeaksQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C51261E9799AA004949FC /* UINavigationController+FTLeaksQuery.m */; };
 		C32C512A1E9799B7004949FC /* UIView+FTLeaksQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C51291E9799B7004949FC /* UIView+FTLeaksQuery.m */; };
+		C3F4330F1E987C2300496AA3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F4330E1E987C2300496AA3 /* SecondViewController.m */; };
+		C3F433121E987D8500496AA3 /* FTLeaksAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F433111E987D8500496AA3 /* FTLeaksAssistant.m */; };
+		C3F433151E987FC400496AA3 /* UIResponder+ResponderChain.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F433141E987FC400496AA3 /* UIResponder+ResponderChain.m */; };
 		ED1AF0EE4EB8537B764DA320 /* libPods-FTLeaksUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB13F62EFAB1598487422660 /* libPods-FTLeaksUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +84,12 @@
 		C32C51261E9799AA004949FC /* UINavigationController+FTLeaksQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FTLeaksQuery.m"; sourceTree = "<group>"; };
 		C32C51281E9799B7004949FC /* UIView+FTLeaksQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FTLeaksQuery.h"; sourceTree = "<group>"; };
 		C32C51291E9799B7004949FC /* UIView+FTLeaksQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FTLeaksQuery.m"; sourceTree = "<group>"; };
+		C3F4330D1E987C2300496AA3 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		C3F4330E1E987C2300496AA3 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C3F433101E987D8500496AA3 /* FTLeaksAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLeaksAssistant.h; sourceTree = "<group>"; };
+		C3F433111E987D8500496AA3 /* FTLeaksAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLeaksAssistant.m; sourceTree = "<group>"; };
+		C3F433131E987FC400496AA3 /* UIResponder+ResponderChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+ResponderChain.h"; sourceTree = "<group>"; };
+		C3F433141E987FC400496AA3 /* UIResponder+ResponderChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+ResponderChain.m"; sourceTree = "<group>"; };
 		FFE893579FCCB7C6FE63F7F1 /* libPods-FTLeaks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FTLeaks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,9 +173,13 @@
 				C32C50E91E978C88004949FC /* AppDelegate.m */,
 				C32C50EB1E978C88004949FC /* ViewController.h */,
 				C32C50EC1E978C88004949FC /* ViewController.m */,
+				C3F4330D1E987C2300496AA3 /* SecondViewController.h */,
+				C3F4330E1E987C2300496AA3 /* SecondViewController.m */,
 				C32C51181E978CA3004949FC /* FTLeaksCenter.h */,
 				C32C51191E978CA3004949FC /* FTLeaksCenter.m */,
 				C32C511B1E97922D004949FC /* FTLeaksQueryProtocol.h */,
+				C3F433101E987D8500496AA3 /* FTLeaksAssistant.h */,
+				C3F433111E987D8500496AA3 /* FTLeaksAssistant.m */,
 				C32C511C1E9793EC004949FC /* NSObject+FTLeaks.h */,
 				C32C511D1E9793EC004949FC /* NSObject+FTLeaks.m */,
 				C32C511F1E979504004949FC /* NSObject+FTLeaksInfo.h */,
@@ -177,6 +190,8 @@
 				C32C51261E9799AA004949FC /* UINavigationController+FTLeaksQuery.m */,
 				C32C51281E9799B7004949FC /* UIView+FTLeaksQuery.h */,
 				C32C51291E9799B7004949FC /* UIView+FTLeaksQuery.m */,
+				C3F433131E987FC400496AA3 /* UIResponder+ResponderChain.h */,
+				C3F433141E987FC400496AA3 /* UIResponder+ResponderChain.m */,
 				C32C50EE1E978C88004949FC /* Main.storyboard */,
 				C32C50F11E978C88004949FC /* Assets.xcassets */,
 				C32C50F31E978C88004949FC /* LaunchScreen.storyboard */,
@@ -492,15 +507,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F4330F1E987C2300496AA3 /* SecondViewController.m in Sources */,
 				C32C50ED1E978C88004949FC /* ViewController.m in Sources */,
 				C32C512A1E9799B7004949FC /* UIView+FTLeaksQuery.m in Sources */,
 				C32C50EA1E978C88004949FC /* AppDelegate.m in Sources */,
+				C3F433121E987D8500496AA3 /* FTLeaksAssistant.m in Sources */,
 				C32C51241E979860004949FC /* UIViewController+FTLeaksQuery.m in Sources */,
 				C32C511A1E978CA3004949FC /* FTLeaksCenter.m in Sources */,
 				C32C50E71E978C88004949FC /* main.m in Sources */,
 				C32C51271E9799AA004949FC /* UINavigationController+FTLeaksQuery.m in Sources */,
 				C32C51211E979504004949FC /* NSObject+FTLeaksInfo.m in Sources */,
 				C32C511E1E9793EC004949FC /* NSObject+FTLeaks.m in Sources */,
+				C3F433151E987FC400496AA3 /* UIResponder+ResponderChain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +671,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FTLeaks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farteen.audioconsole.FTLeaks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -665,6 +684,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FTLeaks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farteen.audioconsole.FTLeaks;
 				PRODUCT_NAME = "$(TARGET_NAME)";

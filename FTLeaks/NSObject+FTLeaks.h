@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "FTLeaksQueryProtocol.h"
+@class FTLeaksAssistant;
 
 @interface NSObject (FTLeaks)<FTLeaksQueryProtocol>
 
+@property (nonatomic, strong) FTLeaksAssistant  *leaksAssistant;
 
 @end

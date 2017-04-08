@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SecondViewController.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,13 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
   // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+  SecondViewController *second = [[SecondViewController alloc] init];
+  [self.navigationController pushViewController:second animated:YES];
 }
 
 

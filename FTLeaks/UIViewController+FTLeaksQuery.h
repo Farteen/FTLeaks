@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FTLeaksQueryProtocol.h"
 
-@interface UIViewController (FTLeaksQuery)
+@interface UIViewController (FTLeaksQuery)<FTLeaksQueryProtocol>
 
 @end

@@ -8,39 +8,89 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 		<key>FBRetainCycleDetector.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>FLEX.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>KVOController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Pods-FTLeaks.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>Pods-FTLeaksTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>Pods-FTLeaksUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>9C2D3327264C1DB785EADD89D3242323</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9EDF030B4D9EDD28316EF9611F83FE43</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A620C9D5ED13D7CD775F1FEB7C20C999</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF9D6EADD8E530631B349B6FDC56DA82</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7C5FD310966070D9553E5B95C59641B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D17A2FBA240326E95120BBA1FB740C56</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9AB2190009BE523EED82AF9E3714333</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

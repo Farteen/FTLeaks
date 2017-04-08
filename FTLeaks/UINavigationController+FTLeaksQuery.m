@@ -7,6 +7,7 @@
 //
 
 #import "UINavigationController+FTLeaksQuery.h"
+#import <Aspects.h>
 
 @implementation UINavigationController (FTLeaksQuery)
 

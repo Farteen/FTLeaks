@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FTLeaksQueryProtocol.h"
 
-@interface UIView (FTLeaksQuery)
+@interface UIView (FTLeaksQuery)<FTLeaksQueryProtocol>
+
+
+- (BOOL)isVisible;
+
+- (BOOL)isInViewStack;
+
+
 
 @end

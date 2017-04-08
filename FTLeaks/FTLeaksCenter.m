@@ -7,6 +7,10 @@
 //
 
 #import "FTLeaksCenter.h"
+#import "UIView+FTLeaksQuery.h"
+#import "UINavigationController+FTLeaksQuery.h"
+#import "UIViewController+FTLeaksQuery.h"
+#import "NSObject+FTLeaks.h"
 
 NSString *const FTLeaksAreYouAliveNotification  = @"FTLeaksAreYouAliveNotification";
 NSString *const FTLeaksIAmAliveNotification     = @"FTLeaksIAmAliveNotification";
@@ -41,6 +45,7 @@ static FTLeaksCenter *__sharedPingCenter = nil;
 }
 
 - (void)startLeaksQuery {
+  [UIView prepareForQuery];
   [self.timer fire];
 }
 
