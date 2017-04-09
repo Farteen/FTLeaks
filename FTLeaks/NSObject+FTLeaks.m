@@ -11,9 +11,9 @@
 #import "FTLeaksAssistant.h"
 #import <Aspects.h>
 
-static inline NSArray* allPropertiesNames(Class class) {
+static inline NSArray* allPropertiesNames(Class aClass) {
   unsigned count;
-  objc_property_t *properties = class_copyPropertyList(class, &count);
+  objc_property_t *properties = class_copyPropertyList(aClass, &count);
   
   NSMutableArray *rv = [NSMutableArray array];
   
@@ -32,9 +32,32 @@ static inline NSArray* allPropertiesNames(Class class) {
 
 @implementation NSObject (FTLeaks)
 
+- (NSArray *)classChain {
+  NSArray *result = [NSArray array];
+  Class nextClass = [self class];
+  while (!isSystemClass(nextClass)) {
+    NSString *nextClassString = NSStringFromClass(nextClass);
+    result = [@[nextClassString] arrayByAddingObjectsFromArray:result];
+    nextClass = [nextClass superclass];
+  }
+  return result;
+}
+
+- (Class)nearestToSystemClass {
+  NSArray *result = [self classChain];
+  if (result.count > 1) {
+    return result[1];
+  }
+  return [self class];
+}
+
+- (NSString *)nearestToSystemClassName {
+  return NSStringFromClass([self nearestToSystemClass]);
+}
+
 /// 是否需要检查
 - (BOOL)shouldCheckMe {
-  if ([self isSystemClass]) {
+  if (isSystemClass([self class])) {
     return NO;
   }
   return YES;
@@ -76,7 +99,7 @@ static inline NSArray* allPropertiesNames(Class class) {
     Class nextClass = [self class];
     NSString *nextClassString = NSStringFromClass(nextClass);
     
-    while (nextClass && [nextClassString isEqualToString:[self checkUpToClass]]) {
+    while (nextClass && ![nextClassString isEqualToString:[self checkUpToClass]]) {
       if (index < checkDepth) {
         /// 如果当前类为不是忽略的类链之一,则直接
         NSString *nextClassString = NSStringFromClass(nextClass);
@@ -90,16 +113,27 @@ static inline NSArray* allPropertiesNames(Class class) {
         break;
       }
     }
-    NSLog(@"%@",watchedAllProperties);
+    NSArray *properties = [watchedAllProperties copy];
+    
+    properties = [self filterProperties:properties];
+    
+    [self addPropertiesObserver:properties];
+    
+    FTLeaksAssistant *leaksAssistant = [[FTLeaksAssistant alloc] init];
+    self.leaksAssistant = leaksAssistant;
   }
 }
 
-- (BOOL)isSystemClass {
-  NSBundle *b = [NSBundle bundleForClass:[self class]];
-  if (b == [NSBundle mainBundle]) {
-    return NO;
-  }
-  return YES;
+- (NSArray *)filterProperties:(NSArray *)properties {
+  NSSet *ignoredProperties = [NSSet setWithArray:[self ignoredProperties]];
+  NSMutableSet *allProperties = [NSMutableSet setWithArray:properties];
+  [allProperties minusSet:ignoredProperties];
+  NSArray *result = [allProperties allObjects];
+  return result;
+}
+
+- (void)addPropertiesObserver:(NSArray *)properties {
+  
 }
 
 @end

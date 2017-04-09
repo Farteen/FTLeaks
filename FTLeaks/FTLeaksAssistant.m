@@ -7,7 +7,29 @@
 //
 
 #import "FTLeaksAssistant.h"
+#import "FTLeaksCenter.h"
+#import "FTLeaksQueryProtocol.h"
+
+@interface FTLeaksAssistant () <FTLeaksQueryProtocol>
+
+@end
 
 @implementation FTLeaksAssistant
+
+- (instancetype)init {
+  if (self = [super init]) {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveAliveQuery:) name:FTLeaksAreYouAliveNotification object:nil];
+  }
+  return self;
+}
+
+- (void)didReceiveAliveQuery:(NSNotification *)noti {
+  
+}
+
+/// 是否需要检查
+- (BOOL)shouldCheckMe {
+  return NO;
+}
 
 @end

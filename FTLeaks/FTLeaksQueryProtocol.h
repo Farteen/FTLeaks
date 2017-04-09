@@ -11,6 +11,8 @@
 @protocol FTLeaksQueryProtocol <NSObject>
 /// 是否需要检查
 - (BOOL)shouldCheckMe;
+
+@optional
 /// 巡检的深度
 - (NSInteger)checkingDepth;
 /// 标记为alive

@@ -18,4 +18,8 @@
 }
 */
 
+- (NSArray *)ignoredProperties {
+  return @[@"moving"];
+}
+
 @end

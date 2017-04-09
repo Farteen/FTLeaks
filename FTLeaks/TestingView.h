@@ -10,4 +10,10 @@
 
 @interface TestingView : UIView
 
+@property (nonatomic, strong) NSString  *testing;
+
+@property (nonatomic, strong) NSString  *mocking;
+
+@property (nonatomic, strong) NSString  *moving;
+
 @end

@@ -9,6 +9,8 @@
 #import "UIView+FTLeaksQuery.h"
 #import "UIResponder+ResponderChain.h"
 #import <Aspects.h>
+#import "NSObject+FTLeaks.h"
+
 static NSString *const FTLeaksQueryUIViewUpToClass = @"UIView";
 
 @implementation UIView (FTLeaksQuery)
@@ -53,10 +55,7 @@ static NSString *const FTLeaksQueryUIViewUpToClass = @"UIView";
 }
 
 - (NSString *)checkUpToClass {
-  if ([NSStringFromClass([self class]) hasPrefix:@"UI"]) {
-    return NSStringFromClass([self class]);
-  }
-  return FTLeaksQueryUIViewUpToClass;
+  return [self nearestToSystemClassName];
 }
 
 /// 需要诊断的子属性
