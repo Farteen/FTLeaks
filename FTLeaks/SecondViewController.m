@@ -21,7 +21,10 @@
   Testing2View *view = [[Testing2View alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
   view.backgroundColor = [UIColor redColor];
   [self.view addSubview:view];
-
+  
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    view.mocking = @"mocking";
+  });
   
     // Do any additional setup after loading the view.
 }

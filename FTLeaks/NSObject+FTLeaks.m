@@ -11,6 +11,20 @@
 #import "FTLeaksAssistant.h"
 #import <Aspects.h>
 
+static inline BOOL isStrongProperty(objc_property_t property) {
+  const char* attrs = property_getAttributes(property);
+  if (attrs == NULL)
+    return false;
+  
+  const char* p = attrs;
+  p = strchr(p, '&');
+  if (p == NULL) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 static inline NSArray* allPropertiesNames(Class aClass) {
   unsigned count;
   objc_property_t *properties = class_copyPropertyList(aClass, &count);
@@ -30,7 +44,41 @@ static inline NSArray* allPropertiesNames(Class aClass) {
   return rv;
 }
 
+static inline NSArray *allStrongPropertiesNames(Class aClass) {
+  unsigned int i, count = 0;
+  
+  objc_property_t* properties = class_copyPropertyList(aClass, &count );
+  if(count == 0) {
+    free(properties);
+    return nil;
+  }
+  
+  NSMutableArray* names = @[].mutableCopy;
+  
+  for (i = 0; i < count; i++) {
+    objc_property_t property = properties[i];
+    bool isStrong = isStrongProperty(property);
+    if (isStrong == false) {
+      NSString *name = [NSString stringWithUTF8String:property_getName(property)];
+      [names addObject:name];
+    }
+  }
+  
+  return [names copy];
+
+}
+
 @implementation NSObject (FTLeaks)
+
+//+ (void)load {
+//  static dispatch_once_t onceToken;
+//  dispatch_once(&onceToken, ^{
+//    SEL deallocSel = NSSelectorFromString(@"dealloc");
+//    [NSObject aspect_hookSelector:deallocSel withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> aspectInfo){
+////      [[aspectInfo.instance KVOControllerNonRetaining] ]
+//    }error:nil];
+//  });
+//}
 
 - (NSArray *)classChain {
   NSArray *result = [NSArray array];
@@ -64,9 +112,9 @@ static inline NSArray* allPropertiesNames(Class aClass) {
   return YES;
 }
 /// 巡检的深度
-- (NSInteger)checkingDepth {
-  return 0;
-}
+//- (NSInteger)checkingDepth {
+//  return 0;
+//}
 
 /// 标记为alive
 - (void)markIAmAlive {
@@ -93,7 +141,6 @@ static inline NSArray* allPropertiesNames(Class aClass) {
 
 - (void)watchoutProperties {
   if ([self shouldCheckMe]) {
-    NSInteger checkDepth = [self checkingDepth];
     NSMutableArray *watchedAllProperties = [NSMutableArray array];
     NSString *checkUpToClassString = [self checkUpToClass];
     
@@ -102,29 +149,27 @@ static inline NSArray* allPropertiesNames(Class aClass) {
     NSString *nextClassString = NSStringFromClass(nextClass);
     
     while (nextClass) {
-      if (index < checkDepth) {
-        /// 如果当前类为不是忽略的类链之一,则直接
-        if (![[self ignoredSuperClass] containsObject:nextClassString]) {
-          [watchedAllProperties addObjectsFromArray:allPropertiesNames(nextClass)];
-        }
-        if ([nextClassString isEqualToString:checkUpToClassString]) {
-          break;
-        }
-        nextClass = [nextClass superclass];
-        nextClassString = NSStringFromClass(nextClass);
-        index++;
-        
+      /// 如果当前类为不是忽略的类链之一,则直接
+      if (![[self ignoredSuperClass] containsObject:nextClassString]) {
+        [watchedAllProperties addObjectsFromArray:allPropertiesNames(nextClass)];
       }
+      if ([nextClassString isEqualToString:checkUpToClassString]) {
+        break;
+      }
+      nextClass = [nextClass superclass];
+      nextClassString = NSStringFromClass(nextClass);
+      index++;
     }
     
     NSArray *properties = [watchedAllProperties copy];
     /// 过滤
     properties = [self filterProperties:properties];
     /// 添加观察
-    [self addPropertiesObserver:properties];
     
     FTLeaksAssistant *leaksAssistant = [[FTLeaksAssistant alloc] init];
+    [leaksAssistant observeWeakOwner:self watchedProperties:properties];
     self.leaksAssistant = leaksAssistant;
+    
   }
 }
 
@@ -136,8 +181,6 @@ static inline NSArray* allPropertiesNames(Class aClass) {
   return result;
 }
 
-- (void)addPropertiesObserver:(NSArray *)properties {
-  
-}
+
 
 @end

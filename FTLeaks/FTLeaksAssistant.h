@@ -15,6 +15,6 @@
 /// 存在内存泄漏已经发送
 @property (nonatomic, assign) BOOL              aliveIsSent;
 
-
+- (void)observeWeakOwner:(id)weakOwner watchedProperties:(NSArray *)properties;
 
 @end

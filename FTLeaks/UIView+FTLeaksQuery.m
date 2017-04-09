@@ -23,9 +23,9 @@ static NSString *const FTLeaksQueryUIViewUpToClass = @"UIView";
 }
 
 /// 巡检的深度
-- (NSInteger)checkingDepth {
-  return 5;
-}
+//- (NSInteger)checkingDepth {
+//  return 5;
+//}
 /// 标记为alive
 - (void)markIAmAlive {
   

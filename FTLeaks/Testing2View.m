@@ -10,6 +10,10 @@
 
 @implementation Testing2View
 
+- (void)dealloc {
+  NSLog(@"%s",__func__ );
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
