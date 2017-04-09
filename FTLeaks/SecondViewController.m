@@ -7,7 +7,7 @@
 //
 
 #import "SecondViewController.h"
-#import "TestingView.h"
+#import "Testing2View.h"
 #import <FBRetainCycleDetector.h>
 
 @interface SecondViewController ()
@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  TestingView *view = [[TestingView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+  Testing2View *view = [[Testing2View alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
   view.backgroundColor = [UIColor redColor];
   [self.view addSubview:view];
 

@@ -45,13 +45,14 @@ static inline NSArray* allPropertiesNames(Class aClass) {
 
 - (Class)nearestToSystemClass {
   NSArray *result = [self classChain];
-  if (result.count > 1) {
-    return result[1];
+  if (result.count > 0) {
+    return NSClassFromString([result firstObject]);
   }
   return [self class];
 }
 
 - (NSString *)nearestToSystemClassName {
+  
   return NSStringFromClass([self nearestToSystemClass]);
 }
 
@@ -94,29 +95,32 @@ static inline NSArray* allPropertiesNames(Class aClass) {
   if ([self shouldCheckMe]) {
     NSInteger checkDepth = [self checkingDepth];
     NSMutableArray *watchedAllProperties = [NSMutableArray array];
+    NSString *checkUpToClassString = [self checkUpToClass];
     
     NSInteger index = 0;
     Class nextClass = [self class];
     NSString *nextClassString = NSStringFromClass(nextClass);
     
-    while (nextClass && ![nextClassString isEqualToString:[self checkUpToClass]]) {
+    while (nextClass) {
       if (index < checkDepth) {
         /// 如果当前类为不是忽略的类链之一,则直接
-        NSString *nextClassString = NSStringFromClass(nextClass);
         if (![[self ignoredSuperClass] containsObject:nextClassString]) {
           [watchedAllProperties addObjectsFromArray:allPropertiesNames(nextClass)];
+        }
+        if ([nextClassString isEqualToString:checkUpToClassString]) {
+          break;
         }
         nextClass = [nextClass superclass];
         nextClassString = NSStringFromClass(nextClass);
         index++;
-      } else {
-        break;
+        
       }
     }
+    
     NSArray *properties = [watchedAllProperties copy];
-    
+    /// 过滤
     properties = [self filterProperties:properties];
-    
+    /// 添加观察
     [self addPropertiesObserver:properties];
     
     FTLeaksAssistant *leaksAssistant = [[FTLeaksAssistant alloc] init];

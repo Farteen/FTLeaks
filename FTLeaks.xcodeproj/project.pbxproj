@@ -24,6 +24,7 @@
 		C32C51271E9799AA004949FC /* UINavigationController+FTLeaksQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C51261E9799AA004949FC /* UINavigationController+FTLeaksQuery.m */; };
 		C32C512A1E9799B7004949FC /* UIView+FTLeaksQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C32C51291E9799B7004949FC /* UIView+FTLeaksQuery.m */; };
 		C34D6D351E99B5310053914B /* TestingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C34D6D341E99B5310053914B /* TestingView.m */; };
+		C34D6D381E99C1420053914B /* Testing2View.m in Sources */ = {isa = PBXBuildFile; fileRef = C34D6D371E99C1420053914B /* Testing2View.m */; };
 		C3F4330F1E987C2300496AA3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F4330E1E987C2300496AA3 /* SecondViewController.m */; };
 		C3F433121E987D8500496AA3 /* FTLeaksAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F433111E987D8500496AA3 /* FTLeaksAssistant.m */; };
 		C3F433151E987FC400496AA3 /* UIResponder+ResponderChain.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F433141E987FC400496AA3 /* UIResponder+ResponderChain.m */; };
@@ -87,6 +88,8 @@
 		C32C51291E9799B7004949FC /* UIView+FTLeaksQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FTLeaksQuery.m"; sourceTree = "<group>"; };
 		C34D6D331E99B5310053914B /* TestingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingView.h; sourceTree = "<group>"; };
 		C34D6D341E99B5310053914B /* TestingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingView.m; sourceTree = "<group>"; };
+		C34D6D361E99C1420053914B /* Testing2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Testing2View.h; sourceTree = "<group>"; };
+		C34D6D371E99C1420053914B /* Testing2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Testing2View.m; sourceTree = "<group>"; };
 		C3F4330D1E987C2300496AA3 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		C3F4330E1E987C2300496AA3 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		C3F433101E987D8500496AA3 /* FTLeaksAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLeaksAssistant.h; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				C3F4330E1E987C2300496AA3 /* SecondViewController.m */,
 				C34D6D331E99B5310053914B /* TestingView.h */,
 				C34D6D341E99B5310053914B /* TestingView.m */,
+				C34D6D361E99C1420053914B /* Testing2View.h */,
+				C34D6D371E99C1420053914B /* Testing2View.m */,
 				C32C51181E978CA3004949FC /* FTLeaksCenter.h */,
 				C32C51191E978CA3004949FC /* FTLeaksCenter.m */,
 				C32C511B1E97922D004949FC /* FTLeaksQueryProtocol.h */,
@@ -514,6 +519,7 @@
 			files = (
 				C3F4330F1E987C2300496AA3 /* SecondViewController.m in Sources */,
 				C32C50ED1E978C88004949FC /* ViewController.m in Sources */,
+				C34D6D381E99C1420053914B /* Testing2View.m in Sources */,
 				C32C512A1E9799B7004949FC /* UIView+FTLeaksQuery.m in Sources */,
 				C32C50EA1E978C88004949FC /* AppDelegate.m in Sources */,
 				C34D6D351E99B5310053914B /* TestingView.m in Sources */,
