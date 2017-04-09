@@ -12,4 +12,6 @@
 
 - (UIViewController *)nearestViewController;
 
+- (UINavigationController *)nearestNavigationController;
+
 @end

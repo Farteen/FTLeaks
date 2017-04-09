@@ -17,9 +17,15 @@
 - (void)markIAmAlive;
 /// 是否应该存在,YES为合理存在,NO为不合理存在,如果为NO,并且多次诊断都为NO,则认为他是一个内存泄漏
 - (BOOL)shouldIAlive;
+/// 检测属性
+- (void)watchoutProperties;
 /// 需要诊断的子属性
-- (NSArray *)propertiesToCheck;
-
+- (NSArray *)ignoredSuperClass;
+/// 需要忽略的子属性
+- (NSArray *)ignoredProperties;
+/// 最顶检测到的类
+- (NSString *)checkUpToClass;
+/// 开始查询
 + (void)prepareForQuery;
 
 @end

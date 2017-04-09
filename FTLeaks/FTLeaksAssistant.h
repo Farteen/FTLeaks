@@ -10,6 +10,9 @@
 
 @interface FTLeaksAssistant : NSObject
 
+/// 内存泄露的对象
 @property (nonatomic, weak) id      weakOwner;
+/// 存在内存泄漏已经发送
+@property (nonatomic, assign) BOOL              aliveIsSent;
 
 @end

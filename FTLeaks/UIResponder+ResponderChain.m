@@ -18,4 +18,12 @@
   return (UIViewController *)nextResponder;
 }
 
+- (UINavigationController *)nearestNavigationController {
+  UIResponder *nextResponder = self;
+  while (![nextResponder isKindOfClass:[UINavigationController class]]) {
+    nextResponder = nextResponder.nextResponder;
+  }
+  return (UINavigationController *)nextResponder;
+}
+
 @end

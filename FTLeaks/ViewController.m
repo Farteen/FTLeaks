@@ -17,7 +17,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+  char *buf1 = @encode(int **);
+  printf("%s",buf1);
   // Do any additional setup after loading the view, typically from a nib.
 }
 
