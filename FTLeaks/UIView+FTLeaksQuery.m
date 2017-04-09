@@ -22,6 +22,13 @@ static NSString *const FTLeaksQueryUIViewUpToClass = @"UIView";
   } error:nil];
 }
 
+- (BOOL)shouldCheckMe {
+  if (self.superview) {
+    return [super shouldCheckMe];
+  }
+  return NO;
+}
+
 /// 巡检的深度
 //- (NSInteger)checkingDepth {
 //  return 5;

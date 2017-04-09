@@ -45,6 +45,7 @@ static FTLeaksCenter *__sharedPingCenter = nil;
 }
 
 - (void)startLeaksQuery {
+  [NSObject prepareForQuery];
   [UIView prepareForQuery];
   [self.timer fire];
 }

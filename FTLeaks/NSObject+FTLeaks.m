@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 #import "FTLeaksAssistant.h"
 #import <Aspects.h>
+#import <KVOController.h>
 
 static inline BOOL isStrongProperty(objc_property_t property) {
   const char* attrs = property_getAttributes(property);
@@ -73,10 +74,6 @@ static inline NSArray *allStrongPropertiesNames(Class aClass) {
 //+ (void)load {
 //  static dispatch_once_t onceToken;
 //  dispatch_once(&onceToken, ^{
-//    SEL deallocSel = NSSelectorFromString(@"dealloc");
-//    [NSObject aspect_hookSelector:deallocSel withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> aspectInfo){
-////      [[aspectInfo.instance KVOControllerNonRetaining] ]
-//    }error:nil];
 //  });
 //}
 
@@ -127,7 +124,12 @@ static inline NSArray *allStrongPropertiesNames(Class aClass) {
 }
 
 + (void)prepareForQuery {
-  
+//    SEL deallocSel = NSSelectorFromString(@"dealloc");
+//    [NSObject aspect_hookSelector:deallocSel withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> aspectInfo){
+////      [aspectInfo.instance removeObserver:[aspectInfo.instance leaksAssistant]];
+//      
+//      [[aspectInfo.instance leaksAssistant].KVOControllerNonRetaining unobserveAll];
+//    }error:nil];
 }
 
 - (void)setLeaksAssistant:(FTLeaksAssistant *)leaksAssistant {
@@ -151,7 +153,8 @@ static inline NSArray *allStrongPropertiesNames(Class aClass) {
     while (nextClass) {
       /// 如果当前类为不是忽略的类链之一,则直接
       if (![[self ignoredSuperClass] containsObject:nextClassString]) {
-        [watchedAllProperties addObjectsFromArray:allPropertiesNames(nextClass)];
+//        [watchedAllProperties addObjectsFromArray:allPropertiesNames(nextClass)];
+        [watchedAllProperties addObjectsFromArray:allStrongPropertiesNames(nextClass)];
       }
       if ([nextClassString isEqualToString:checkUpToClassString]) {
         break;
@@ -167,9 +170,11 @@ static inline NSArray *allStrongPropertiesNames(Class aClass) {
     /// 添加观察
     
     FTLeaksAssistant *leaksAssistant = [[FTLeaksAssistant alloc] init];
-    [leaksAssistant observeWeakOwner:self watchedProperties:properties];
     self.leaksAssistant = leaksAssistant;
-    
+    for (NSString *propertyName in properties) {
+      id propertyValue = [self valueForKey:propertyName];
+      
+    }
   }
 }
 

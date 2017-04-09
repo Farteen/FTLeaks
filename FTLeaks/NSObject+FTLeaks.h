@@ -14,6 +14,8 @@
 
 @interface NSObject (FTLeaks)<FTLeaksQueryProtocol>
 
+@property (nonatomic, weak)   id                parentNode;
+
 @property (nonatomic, strong) FTLeaksAssistant  *leaksAssistant;
 
 - (NSArray *)classChain;

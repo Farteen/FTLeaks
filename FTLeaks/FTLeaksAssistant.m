@@ -13,9 +13,17 @@
 
 @interface FTLeaksAssistant () <FTLeaksQueryProtocol>
 
+@property (nonatomic, strong)   NSArray *allWatchedProperties;
+
 @end
 
 @implementation FTLeaksAssistant
+
+- (void)dealloc {
+  for (NSString *prop in self.allWatchedProperties) {
+    [self.weakOwner removeObserver:self.KVOControllerNonRetaining forKeyPath:prop];
+  }
+}
 
 - (instancetype)init {
   if (self = [super init]) {
@@ -35,8 +43,9 @@
 
 - (void)observeWeakOwner:(id)weakOwner watchedProperties:(NSArray *)properties {
   __weak id weakSelf = self;
+  self.allWatchedProperties = [properties copy];
   for (NSString *property in properties) {
-    [self.KVOControllerNonRetaining observe:weakSelf keyPath:property options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
+    [self.KVOControllerNonRetaining observe:weakOwner keyPath:property options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
       //      __strong id strongSelf = weakSelf;
       [weakSelf handlePropertyObserver:observer object:object change:change];
     }];
