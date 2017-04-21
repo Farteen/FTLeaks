@@ -11,17 +11,21 @@
 #import "UINavigationController+FTLeaksQuery.h"
 #import "UIViewController+FTLeaksQuery.h"
 #import "NSObject+FTLeaks.h"
+#import "FTObjectShadow.h"
 
 NSString *const FTLeaksAreYouAliveNotification  = @"FTLeaksAreYouAliveNotification";
 NSString *const FTLeaksIAmAliveNotification     = @"FTLeaksIAmAliveNotification";
 
-NSTimeInterval const FTLeakQueryTimeinterval = .5;
+NSTimeInterval const FTLeakQueryTimeinterval = 5.0;
 
 static FTLeaksCenter *__sharedPingCenter = nil;
+static NSTimer       *__sharedTimer      = nil;
 
 @interface FTLeaksCenter ()
 
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSArray *ignoredClasses;
+
+@property (nonatomic, strong) NSArray *ignoredPrefixs;
 
 @end
 
@@ -35,32 +39,44 @@ static FTLeaksCenter *__sharedPingCenter = nil;
   return __sharedPingCenter;
 }
 
+- (void)printAllShadows {
+  for (FTObjectShadow *shadow in self.shadowSet) {
+    NSLog(@"----%@"/*,shadow.ownerName*/,shadow.weakOwner);
+  }
+}
+
 - (instancetype)init {
   if (self = [super init]) {
-      dispatch_async(dispatch_get_main_queue(), ^{
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveAlive:) name:FTLeaksIAmAliveNotification object:nil];
-      });
+    self.shadowSet = [NSSet set];
+    self.ignoredClasses = @[@"AspectInfo",@"AspectTracker", @"AspectIdentifier",@"AppDelegate"];
+    self.ignoredPrefixs = @[@"FLEX"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveAlive:) name:FTLeaksIAmAliveNotification object:nil];
+    });
   }
   return self;
 }
 
++ (BOOL)isIgnoredClass:(Class)aClass {
+  NSString *classString = NSStringFromClass(aClass);
+  BOOL isIgnoredClass = [[FTLeaksCenter sharedInstance].ignoredClasses containsObject:classString];
+  if (isIgnoredClass) {
+    return YES;
+  }
+  for (NSString *classPrefix in [FTLeaksCenter sharedInstance].ignoredPrefixs) {
+    if ([classString hasPrefix:classPrefix]) {
+      return YES;
+    }
+  }
+  return NO;
+}
+
 - (void)startLeaksQuery {
   [NSObject prepareForQuery];
-  [UIView prepareForQuery];
-  [self.timer fire];
-}
-
-- (NSTimer *)timer {
-  if (!_timer) {
-    _timer = [NSTimer timerWithTimeInterval:FTLeakQueryTimeinterval target:self selector:@selector(queryAreYouAlive:) userInfo:nil repeats:YES];
-  }
-  return _timer;
-}
-
-- (void)queryAreYouAlive:(NSTimer *)timer {
-  dispatch_async(dispatch_get_main_queue(), ^{
-    [[NSNotificationCenter defaultCenter] postNotificationName:FTLeaksAreYouAliveNotification object:nil];
-  });
+  __sharedTimer = [NSTimer scheduledTimerWithTimeInterval:FTLeakQueryTimeinterval repeats:YES block:^(NSTimer * _Nonnull timer) {
+    [self printAllShadows];
+  }];
+  [__sharedTimer fire];
 }
 
 - (void)didReceiveAlive:(NSNotification *)noti {
@@ -69,6 +85,10 @@ static FTLeaksCenter *__sharedPingCenter = nil;
 
 - (void)configIgnoreList:(NSArray<NSString *> *)ignoreList {
   
+}
+
+- (void)enqueueShadow:(FTObjectShadow *)shadow {
+  self.shadowSet = [self.shadowSet setByAddingObject:shadow];
 }
 
 @end

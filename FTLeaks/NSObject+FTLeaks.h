@@ -10,13 +10,13 @@
 
 #import <Foundation/Foundation.h>
 #import "FTLeaksQueryProtocol.h"
-@class FTLeaksAssistant;
+@class FTObjectShadow;
 
 @interface NSObject (FTLeaks)<FTLeaksQueryProtocol>
 
 @property (nonatomic, weak)   id                parentNode;
 
-@property (nonatomic, strong) FTLeaksAssistant  *leaksAssistant;
+@property (nonatomic, strong) FTObjectShadow    *shadow;
 
 - (NSArray *)classChain;
 
@@ -25,14 +25,37 @@
 - (Class)nearestToSystemClass;
 
 
+
 @end
 
 
 static inline BOOL isSystemClass(Class aClass) {
-  NSBundle *b = [NSBundle bundleForClass:[aClass class]];
+  NSBundle *b = [NSBundle bundleForClass:aClass];
   if (b == [NSBundle mainBundle]) {
     return NO;
   }
   return YES;
 }
 
+static inline NSArray *classChain(Class aClass) {
+  NSArray *result = [NSArray array];
+  Class nextClass = aClass;
+  while (!isSystemClass(nextClass)) {
+    NSString *nextClassString = NSStringFromClass(nextClass);
+    result = [@[nextClassString] arrayByAddingObjectsFromArray:result];
+    nextClass = [nextClass superclass];
+  }
+  return result;
+}
+
+static inline Class nearestToSystemClass(Class aClass) {
+  NSArray *result = classChain(aClass);//[self classChain];
+  if (result.count > 0) {
+    return NSClassFromString([result firstObject]);
+  }
+  return aClass;
+}
+
+static inline NSString *nearestToSystemClassName(Class aClass) {
+  return NSStringFromClass(nearestToSystemClass(aClass));
+}

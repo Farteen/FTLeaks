@@ -7,11 +7,15 @@
 //
 
 #import "Testing2View.h"
+#import <KVOController.h>
 
 @implementation Testing2View
 
 - (void)dealloc {
-  NSLog(@"%s",__func__ );
+//  NSLog(@"%s",__func__ );
+//  [self.leaksAssistant.KVOController unobserveAll];
+//  self.leaksAssistant.KVOController = nil;
+//  self.leaksAssistant = nil;
 }
 
 /*

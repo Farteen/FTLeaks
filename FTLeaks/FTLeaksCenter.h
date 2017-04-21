@@ -11,12 +11,16 @@
 extern NSString *const FTLeaksAreYouAliveNotification;
 extern NSString *const FTLeaksIAmAliveNotification;
 
+@class FTObjectShadow;
+
 @interface FTLeaksCenter : NSObject
 
+@property (nonatomic, strong) NSSet   *shadowSet;
+- (void)printAllShadows;
 + (instancetype)sharedInstance;
-
++ (BOOL)isIgnoredClass:(Class)aClass;
 - (void)startLeaksQuery;
 
-- (void)configIgnoreList:(NSArray<NSString *> *)ignoreList;
+- (void)enqueueShadow:(FTObjectShadow *)shadow;
 
 @end

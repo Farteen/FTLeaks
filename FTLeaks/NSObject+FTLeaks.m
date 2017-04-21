@@ -8,7 +8,8 @@
 
 #import "NSObject+FTLeaks.h"
 #import <objc/runtime.h>
-#import "FTLeaksAssistant.h"
+#import "FTObjectShadow.h"
+#import "FTLeaksCenter.h"
 #import <Aspects.h>
 #import <KVOController.h>
 
@@ -71,11 +72,51 @@ static inline NSArray *allStrongPropertiesNames(Class aClass) {
 
 @implementation NSObject (FTLeaks)
 
-//+ (void)load {
-//  static dispatch_once_t onceToken;
-//  dispatch_once(&onceToken, ^{
-//  });
-//}
++ (void)prepareForQuery {
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    Class class = [self class];
+    
+    SEL originalSelector = @selector(init);
+    SEL swizzledSelector = @selector(leaks_init);
+    
+    Method originalMethod = class_getInstanceMethod(class, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+    
+    // When swizzling a class method, use the following:
+    // Class class = object_getClass((id)self);
+    // ...
+    // Method originalMethod = class_getClassMethod(class, originalSelector);
+    // Method swizzledMethod = class_getClassMethod(class, swizzledSelector);
+    
+    BOOL didAddMethod =
+    class_addMethod(class,
+                    originalSelector,
+                    method_getImplementation(swizzledMethod),
+                    method_getTypeEncoding(swizzledMethod));
+    
+    if (didAddMethod) {
+      class_replaceMethod(class,
+                          swizzledSelector,
+                          method_getImplementation(originalMethod),
+                          method_getTypeEncoding(originalMethod));
+    } else {
+      method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+  });
+}
+
+- (instancetype)leaks_init {
+  if ([self shouldCheckMe]) {
+    if (![FTLeaksCenter isIgnoredClass:[self class]]) {
+      FTObjectShadow *shadow = [[FTObjectShadow alloc] init];
+      shadow.ownerName = NSStringFromClass([self class]);
+      [[FTLeaksCenter sharedInstance] enqueueShadow:shadow];
+      self.shadow = shadow;
+    }
+  }
+  return [self leaks_init];
+}
 
 - (NSArray *)classChain {
   NSArray *result = [NSArray array];
@@ -123,24 +164,22 @@ static inline NSArray *allStrongPropertiesNames(Class aClass) {
   return NO;
 }
 
-+ (void)prepareForQuery {
-//    SEL deallocSel = NSSelectorFromString(@"dealloc");
-//    [NSObject aspect_hookSelector:deallocSel withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> aspectInfo){
-////      [aspectInfo.instance removeObserver:[aspectInfo.instance leaksAssistant]];
-//      
-//      [[aspectInfo.instance leaksAssistant].KVOControllerNonRetaining unobserveAll];
-//    }error:nil];
+- (void)prepareForQuery {
+
 }
 
-- (void)setLeaksAssistant:(FTLeaksAssistant *)leaksAssistant {
-  objc_setAssociatedObject(self, @selector(leaksAssistant), leaksAssistant, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setShadow:(FTObjectShadow *)leaksAssistant {
+  objc_setAssociatedObject(self, @selector(leaksAssistant), leaksAssistant, OBJC_ASSOCIATION_ASSIGN);
   leaksAssistant.weakOwner = self;
 }
 
-- (FTLeaksAssistant *)leaksAssistant {
+- (FTObjectShadow *)leaksAssistant {
   return objc_getAssociatedObject(self, @selector(leaksAssistant));
 }
 
+/// assistant开发接受通知
+/// 枚举所有属性变量
+/// 对每个属性变量做监听
 - (void)watchoutProperties {
   if ([self shouldCheckMe]) {
     NSMutableArray *watchedAllProperties = [NSMutableArray array];
@@ -153,8 +192,8 @@ static inline NSArray *allStrongPropertiesNames(Class aClass) {
     while (nextClass) {
       /// 如果当前类为不是忽略的类链之一,则直接
       if (![[self ignoredSuperClass] containsObject:nextClassString]) {
-//        [watchedAllProperties addObjectsFromArray:allPropertiesNames(nextClass)];
-        [watchedAllProperties addObjectsFromArray:allStrongPropertiesNames(nextClass)];
+        [watchedAllProperties addObjectsFromArray:allPropertiesNames(nextClass)];
+//        [watchedAllProperties addObjectsFromArray:allStrongPropertiesNames(nextClass)];
       }
       if ([nextClassString isEqualToString:checkUpToClassString]) {
         break;
@@ -168,13 +207,8 @@ static inline NSArray *allStrongPropertiesNames(Class aClass) {
     /// 过滤
     properties = [self filterProperties:properties];
     /// 添加观察
-    
-    FTLeaksAssistant *leaksAssistant = [[FTLeaksAssistant alloc] init];
-    self.leaksAssistant = leaksAssistant;
-    for (NSString *propertyName in properties) {
-      id propertyValue = [self valueForKey:propertyName];
       
-    }
+    
   }
 }
 

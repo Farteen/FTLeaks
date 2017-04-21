@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9EDF030B4D9EDD28316EF9611F83FE43'
+               BlueprintIdentifier = '6ABA6E5C1EC81FDDBEFBE3CFC46268D7'
                BlueprintName = 'Pods-FTLeaks'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-FTLeaks.a'>

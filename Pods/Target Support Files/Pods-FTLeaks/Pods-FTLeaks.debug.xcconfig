@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Aspects" "${PODS_ROOT}/Headers/Public/FBRetainCycleDetector" "${PODS_ROOT}/Headers/Public/FLEX" "${PODS_ROOT}/Headers/Public/KVOController"
-LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Aspects" "$PODS_CONFIGURATION_BUILD_DIR/FBRetainCycleDetector" "$PODS_CONFIGURATION_BUILD_DIR/FLEX" "$PODS_CONFIGURATION_BUILD_DIR/KVOController"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Aspects" -isystem "${PODS_ROOT}/Headers/Public/FBRetainCycleDetector" -isystem "${PODS_ROOT}/Headers/Public/FLEX" -isystem "${PODS_ROOT}/Headers/Public/KVOController"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Aspects" -l"FBRetainCycleDetector" -l"FLEX" -l"KVOController" -l"c++" -l"sqlite3" -l"z" -framework "CoreGraphics" -framework "Foundation" -framework "UIKit"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Aspects" "${PODS_ROOT}/Headers/Public/FBRetainCycleDetector" "${PODS_ROOT}/Headers/Public/KVOController"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Aspects" "$PODS_CONFIGURATION_BUILD_DIR/FBRetainCycleDetector" "$PODS_CONFIGURATION_BUILD_DIR/KVOController"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Aspects" -isystem "${PODS_ROOT}/Headers/Public/FBRetainCycleDetector" -isystem "${PODS_ROOT}/Headers/Public/KVOController"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Aspects" -l"FBRetainCycleDetector" -l"KVOController" -l"c++" -framework "CoreGraphics" -framework "Foundation" -framework "UIKit"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods

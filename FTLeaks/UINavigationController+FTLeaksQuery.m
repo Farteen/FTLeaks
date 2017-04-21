@@ -12,7 +12,7 @@
 @implementation UINavigationController (FTLeaksQuery)
 
 + (void)prepareForQuery {
-  [UIView aspect_hookSelector:@selector(didMoveToSuperview) withOptions:AspectPositionAfter usingBlock:^{
+  [UIView aspect_hookSelector:@selector(pushViewController:animated:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo, UIViewController *vc, BOOL animated){
     
   } error:nil];
 }

@@ -8,7 +8,6 @@ target 'FTLeaks' do
   pod 'KVOController', '~> 1.2.0'
   pod 'FBRetainCycleDetector', '~> 0.1.3'
   pod 'Aspects', '~> 1.4.1'
-  pod 'FLEX', '~> 2.4.0'
 
   target 'FTLeaksTests' do
     inherit! :search_paths

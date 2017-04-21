@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "SecondViewController.h"
+#import "FTLeakObjectA.h"
+#import "FTLeakObjectB.h"
 
 @interface ViewController ()
 
@@ -17,8 +19,12 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  char *buf1 = @encode(int **);
-  printf("%s",buf1);
+  FTLeakObjectA *obja = [[FTLeakObjectA alloc] init];
+  FTLeakObjectB *objb = [[FTLeakObjectB alloc] init];
+  obja.objb = objb;
+  objb.obja = obja;
+//  char *buf1 = @encode(int **);
+//  printf("%s",buf1);
   // Do any additional setup after loading the view, typically from a nib.
 }
 
